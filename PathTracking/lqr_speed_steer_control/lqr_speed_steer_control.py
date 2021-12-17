@@ -34,7 +34,6 @@ class State:
         self.yaw = yaw
         self.v = v
 
-
 def update(state, a, delta):
 
     if delta >= max_steer:
@@ -42,6 +41,7 @@ def update(state, a, delta):
     if delta <= - max_steer:
         delta = - max_steer
 
+        
     state.x = state.x + state.v * math.cos(state.yaw) * dt
     state.y = state.y + state.v * math.sin(state.yaw) * dt
     state.yaw = state.yaw + state.v / L * math.tan(delta) * dt
@@ -58,7 +58,6 @@ def pi_2_pi(angle):
         angle = angle + 2.0 * math.pi
 
     return angle
-
 
 def solve_DARE(A, B, Q, R):
     """
@@ -77,7 +76,6 @@ def solve_DARE(A, B, Q, R):
         X = Xn
 
     return Xn
-
 
 def dlqr(A, B, Q, R):
     """Solve the discrete time lqr controller.
