@@ -15,7 +15,15 @@ import matplotlib.pyplot as plt
 import scipy.linalg as la
 import cubic_spline_planner
 
+
+
+
+
 Kp = 1.0  # speed proportional gain
+
+
+
+
 
 # LQR parameter
 Q = np.eye(4)
